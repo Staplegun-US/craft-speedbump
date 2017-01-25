@@ -1,0 +1,12 @@
+<dialog id="speedbump" class="speedbump" role="alertdialog" aria-labelledby="speedbumpDialogTitle" aria-describedby="speedbumpDialogDescription" aria-hidden="true">
+	<div class="speedbump__content">
+		<div class="speedbumpDialogDescription">
+			{{settings.speedbumpText|raw}}
+		</div>
+		<button class="speedbump--close">{{settings.remainButtonText}}</button> <button class="speedbump--accept">{{settings.proceedButtonText}}</button>
+	</div>
+</dialog>
+{% set whitelistJs %}
+window.speedbumpWhitelist = JSON.parse('{{[]|merge(settings.whitelist|split('\r\n'))|json_encode|raw}}');
+{% endset %}
+{% includeJs whitelistJs %}

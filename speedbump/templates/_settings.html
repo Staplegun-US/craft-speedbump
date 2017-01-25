@@ -1,0 +1,46 @@
+{% includeCssResource "lib/redactor/redactor.css" %}
+{% includeJsResource "lib/redactor/redactor.js" %}
+{% import '_includes/forms' as forms %}
+
+<div class="eventbrite-field-container">
+{{ forms.textareaField({
+	label: "Speedbump Text"|t,
+	id: 'speedbumpText',
+	class: 'redactor',
+	name: 'speedbumpText',
+	value: settings.speedbumpText is defined ? settings.speedbumpText : '',
+	errors: settings.getErrors('speedbumpText')
+}) }}
+{{ forms.textareaField({
+	label: "Whitelist"|t,
+	id: 'whitelist',
+	name: 'whitelist',
+	instructions: 'Your site domain is automatically whitelisted. Enter additional domains (http://google.com) one per line.',
+	rows: 10,
+	value: settings.whitelist,
+	errors: settings.getErrors('whitelist')
+}) }}
+{{ forms.textField({
+	label: "Proceed Button Text"|t,
+	id: 'proceedButtonText',
+	name: 'proceedButtonText',
+	value: settings.proceedButtonText,
+	errors: settings.getErrors('proceedButtonText')
+}) }}
+{{ forms.textField({
+	label: "Remain Button Text"|t,
+	id: 'remainButtonText',
+	name: 'remainButtonText',
+	value: settings.remainButtonText,
+	errors: settings.getErrors('remainButtonText')
+}) }}
+
+</div>
+{% set speedbumpJs %}
+$(document).ready(function() {
+	$('.redactor').redactor({
+		buttons: ["format","bold","italic","lists","link","file","horizontalrule"]
+	});
+});
+{% endset %}
+{% includeJs speedbumpJs %}
