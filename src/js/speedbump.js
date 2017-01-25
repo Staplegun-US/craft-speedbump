@@ -59,7 +59,7 @@ import ally from 'ally.js';
 		var url = event.target.href;
 		var domain = event.target.hostname.split('.').slice(-2).join('.');
 
-		if (siteDomains.indexOf(domain) <= 0 || event.target.classList.contains('require-speedbump') == true) {
+		if (siteDomains.indexOf(domain) < 0 || event.target.classList.contains('require-speedbump') == true) {
 			event.preventDefault();
 			displaySpeedbump(url, event.target, function () {
 				this.target.removeEventListener('click', clickListener);
