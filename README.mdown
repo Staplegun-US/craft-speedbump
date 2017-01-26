@@ -26,7 +26,11 @@ The text for the button that closes the dialog.
 
 ### Usage
 
-After installing the plugin and configuring the settings, the dialog will automatically display for all links, with the exception of the current site URL and any domains in the whitelist.
+After installing the plugin and configuring the settings, add the template hook into your main _layout.html file:
+
+`{% hook 'speedbump' %}`
+
+ The dialog will automatically display for all links, with the exception of the current site URL and any domains in the whitelist.
 
 To enforce the speedbump for a link, add a class of 'require-speedbump' and the speedbump will always display.
 
