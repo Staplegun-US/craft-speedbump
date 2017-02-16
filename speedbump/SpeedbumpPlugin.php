@@ -16,7 +16,7 @@ class SpeedbumpPlugin extends BasePlugin
 
 	public function getVersion()
 	{
-		return '0.0.1';
+		return '0.0.2';
 	}
 
 	public function getSchemaVersion()
@@ -58,6 +58,7 @@ class SpeedbumpPlugin extends BasePlugin
 	{
 		return array(
 			'speedbumpText' => array(AttributeType::String, 'label' => 'Speedbump Text'),
+			'useClassOnly' => array(AttributeType::Bool, 'label' => 'Only Use Class', 'default' => false),
 			'whitelist' => array(AttributeType::String, 'label' => 'Whitelist'),
 			'proceedButtonText' => array(AttributeType::String, 'label' => 'Proceed Button Text', 'default' => 'Accept'),
 			'remainButtonText' => array(AttributeType::String, 'label' => 'Remain Button Text', 'default' => 'Cancel')

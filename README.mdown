@@ -12,6 +12,10 @@ A a11y compliant plugin for Craft CMS that displays a dialog to users when navig
 
 The message that's displayed within the dialog.
 
+#### Use Only Class
+
+When enabled, the speedbump will be displayed only on links with the `require-speedbump` class.
+
 #### Whitelist
 
 The domains that are excepted from displaying the dialog. One per line. Currently only supports top-level domains. This is overridden by links with the 'require-speedbump' class, see Usage.

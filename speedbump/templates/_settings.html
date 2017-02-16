@@ -3,13 +3,13 @@
 {% import '_includes/forms' as forms %}
 
 <div class="eventbrite-field-container">
-{{ forms.textareaField({
-	label: "Speedbump Text"|t,
-	id: 'speedbumpText',
-	class: 'redactor',
-	name: 'speedbumpText',
-	value: settings.speedbumpText is defined ? settings.speedbumpText : '',
-	errors: settings.getErrors('speedbumpText')
+{{ forms.lightswitchField({
+	label: "Only Use Class"|t,
+	id: 'useClassOnly',
+	name: 'useClassOnly',
+	instructions: 'If enabled, the only way to trigger the speedbump is by adding the "require-speedbump" class to a link.',
+	on: (settings.useClassOnly is defined) ? settings.useClassOnly : "",
+	errors: settings.getErrors('useClassOnly')
 }) }}
 {{ forms.textareaField({
 	label: "Whitelist"|t,
@@ -19,6 +19,14 @@
 	rows: 10,
 	value: settings.whitelist,
 	errors: settings.getErrors('whitelist')
+}) }}
+{{ forms.textareaField({
+	label: "Speedbump Text"|t,
+	id: 'speedbumpText',
+	class: 'redactor',
+	name: 'speedbumpText',
+	value: settings.speedbumpText is defined ? settings.speedbumpText : '',
+	errors: settings.getErrors('speedbumpText')
 }) }}
 {{ forms.textField({
 	label: "Proceed Button Text"|t,
