@@ -44,10 +44,10 @@ class SpeedbumpPlugin extends BasePlugin
 	public function init()
 	{
 		if (! craft()->request->isCpRequest()) {
-			craft()->templates->includeJsFile(UrlHelper::getResourceUrl('speedbump/js/speedbump.min.js'));
-			craft()->templates->includeCssFile(UrlHelper::getResourceUrl('speedbump/css/speedbump.css'));
 			craft()->templates->hook('speedbump', function(&$context)
 			{
+				craft()->templates->includeJsFile(UrlHelper::getResourceUrl('speedbump/js/speedbump.min.js'));
+				craft()->templates->includeCssFile(UrlHelper::getResourceUrl('speedbump/css/speedbump.css'));
 				$response = craft()->speedbump->getSpeedbumpHtml();
 				return $response;
 			});
