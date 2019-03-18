@@ -1,0 +1,40 @@
+{
+    "name": "staplegun/speedbump",
+    "description": "Alerts users when navigating to any un-whitelisted links.",
+    "type": "craft-plugin",
+    "version": "0.0.3",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "speedbump"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "STAPLEGUN",
+            "homepage": "https://staplegun.us"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "staplegun\\speedbump\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Speedbump",
+        "handle": "speedbump",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "staplegun\\speedbump\\Speedbump"
+    }
+}

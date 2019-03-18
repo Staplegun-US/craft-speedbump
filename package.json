@@ -1,24 +1,34 @@
 {
-	"name": "craft-speedbump",
-	"version": "0.0.2",
-	"description": "A plugin for Craft CMS that displays an alert to users when navigating off-site.",
-	"main": "index.js",
-	"scripts": {
-		"build:js": "rollup -c --watch",
-		"watch": "npm-run-all -p build:js"
-	},
-	"author": "kotyy",
-	"license": "MIT",
-	"devDependencies": {
-		"npm-run-all": "^3.1.0",
-		"rollup": "^0.36.0",
-		"rollup-plugin-babel": "^2.7.1",
-		"rollup-plugin-commonjs": "^5.0.4",
-		"rollup-plugin-node-resolve": "^2.0.0",
-		"rollup-plugin-uglify": "^1.0.1",
-		"rollup-watch": "^3.2.2"
-	},
-	"dependencies": {
-		"ally.js": "^1.4.1"
-	}
+  "name": "craft-speedbump",
+  "version": "0.0.3",
+  "description": "A plugin for Craft CMS that displays an alert to users when navigating off-site.",
+  "main": "index.js",
+  "scripts": {
+    "watch:css:notworking": "postcss -c postcss.config.js",
+    "watch:js": "rollup -c --watch",
+    "watch": "npm-run-all -p watch:js"
+  },
+  "author": "staplegun",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "npm-run-all": "^3.1.0",
+    "postcss": "^5.2.16",
+    "postcss-clearfix": "^2.0.1",
+    "postcss-cli": "^2.6.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-import": "^9.1.0",
+    "postcss-nested": "^1.0.0",
+    "rollup": "^0.36.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2"
+  },
+  "dependencies": {
+    "ally.js": "^1.4.1"
+  }
 }

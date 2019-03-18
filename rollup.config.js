@@ -7,7 +7,7 @@ let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
 
 export default {
-	entry: 'src/js/speedbump.js',
+	entry: 'dev/speedbump.js',
 	format: 'iife',
 	moduleName: 'speedbump',
 	sourceMap: 'inline',
@@ -18,5 +18,5 @@ export default {
 			commonjs({}),
 			uglify()
 		],
-	dest: 'speedbump/resources/js/speedbump.min.js'
+	dest: 'src/resources/speedbump.min.js'
 };

@@ -1,15 +1,29 @@
-{% includeCssResource "lib/redactor/redactor.css" %}
-{% includeJsResource "lib/redactor/redactor.js" %}
+{% do view.registerAssetBundle("craft\\redactor\\assets\\field\\FieldAsset") %}
+{% do view.registerAssetBundle("craft\\redactor\\assets\\redactor\\RedactorAsset") %}
+
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Speedbump plugin for Craft CMS 3.x
+ *
+ * Alerts users when navigating to any un-whitelisted links.
+ *
+ * @link      https://staplegun.us
+ * @copyright Copyright (c) 2019 STAPLEGUN
+ */
+#}
+
+
 {% import '_includes/forms' as forms %}
 
 <div class="eventbrite-field-container">
-{{ forms.lightswitchField({
-	label: "Only Use Class"|t,
-	id: 'useClassOnly',
-	name: 'useClassOnly',
-	instructions: 'If enabled, the only way to trigger the speedbump is by adding the "require-speedbump" class to a link.',
-	on: (settings.useClassOnly is defined) ? settings.useClassOnly : "",
-	errors: settings.getErrors('useClassOnly')
+{{ forms.textareaField({
+	label: "Speedbump Text"|t,
+	id: 'speedbumpText',
+	class: 'redactor',
+	name: 'speedbumpText',
+	value: settings.speedbumpText is defined ? settings.speedbumpText : '',
+	errors: settings.getErrors('speedbumpText')
 }) }}
 {{ forms.textareaField({
 	label: "Whitelist"|t,
@@ -19,14 +33,6 @@
 	rows: 10,
 	value: settings.whitelist,
 	errors: settings.getErrors('whitelist')
-}) }}
-{{ forms.textareaField({
-	label: "Speedbump Text"|t,
-	id: 'speedbumpText',
-	class: 'redactor',
-	name: 'speedbumpText',
-	value: settings.speedbumpText is defined ? settings.speedbumpText : '',
-	errors: settings.getErrors('speedbumpText')
 }) }}
 {{ forms.textField({
 	label: "Proceed Button Text"|t,
@@ -44,11 +50,10 @@
 }) }}
 
 </div>
-{% set speedbumpJs %}
+{% js %}
 $(document).ready(function() {
 	$('.redactor').redactor({
 		buttons: ["format","bold","italic","lists","link","file","horizontalrule"]
 	});
 });
-{% endset %}
-{% includeJs speedbumpJs %}
+{% endjs %}
