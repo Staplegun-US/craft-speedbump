@@ -2,33 +2,47 @@
 
 A a11y compliant plugin for Craft CMS that displays a dialog to users when navigating off-site.
 
+## Requirements
+
+This plugin requires Craft CMS 3.0.0 or later.
+
 ## Installation
-1. Move the `speedbump` folder into your `craft/plugins` directory
-2. Install the plugin in the Craft Control Panel
 
-### Settings
+To install the plugin, follow these instructions.
 
-#### Speedbump Text
+1. Open your terminal and go to your Craft project:
+
+        cd /path/to/project
+
+2. Then tell Composer to load the plugin:
+
+        composer require staplegun/craft-speedbump
+
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Speedbump.
+
+## Settings
+
+### Speedbump Text
 
 The message that's displayed within the dialog.
 
-#### Use Only Class
+### Use Only Class
 
 When enabled, the speedbump will be displayed only on links with the `require-speedbump` class.
 
-#### Whitelist
+### Whitelist
 
 The domains that are excepted from displaying the dialog. One per line. Currently only supports top-level domains. This is overridden by links with the 'require-speedbump' class, see Usage.
 
-#### Proceed Button Text
+### Proceed Button Text
 
 The text for the button that allows a user to proceed.
 
-#### Remain Button Text
+### Remain Button Text
 
 The text for the button that closes the dialog.
 
-### Usage
+## Usage
 
 After installing the plugin and configuring the settings, add the template hook into your main _layout.html file:
 
