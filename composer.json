@@ -11,8 +11,8 @@
         "speedbump"
     ],
     "support": {
-        "docs": "???",
-        "issues": "???"
+        "docs": "https://staplegun.us",
+        "issues": "https://staplegun.us"
     },
     "license": "MIT",
     "authors": [
@@ -34,7 +34,7 @@
         "handle": "speedbump",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "???",
+        "changelogUrl": "https://github.com/Staplegun-US/craft-speedbump/blob/master/CHANGELOG.md",
         "class": "staplegun\\speedbump\\Speedbump"
     }
 }
