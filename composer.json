@@ -2,7 +2,6 @@
     "name": "staplegun/speedbump",
     "description": "Alerts users when navigating to any un-whitelisted links.",
     "type": "craft-plugin",
-    "version": "0.0.3",
     "keywords": [
         "craft",
         "cms",
